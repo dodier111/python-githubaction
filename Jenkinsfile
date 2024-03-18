@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Repository') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/dodier111/python-githubaction.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/dodier111/python-githubaction.git']]])
             }
         }
 
