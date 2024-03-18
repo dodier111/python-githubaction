@@ -25,6 +25,6 @@ jobs:
 
     - name: Deploy and Run Python Application
       run: |
-        /usr/bin/node /usr/local/bin/pm2 start app.py --interpreter python3
+        /home/ubuntu/.nvm/versions/node/v20.11.1/bin/node /home/ubuntu/.nvm/versions/node/v20.11.1/bin/pm2 start app.py --interpreter python3
 
   
