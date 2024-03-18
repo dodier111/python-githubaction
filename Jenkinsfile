@@ -11,7 +11,7 @@ pipeline {
         stage('Deploy and Run Python Application') {
             steps {
                 sh 'pip3 install -r requirements.txt'
-                sh 'python3 app.py'
+                sh 'pm2 start app.py --interpreter python3y'
             }
         }
     }
