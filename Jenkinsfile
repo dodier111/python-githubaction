@@ -4,16 +4,17 @@ pipeline {
     stages {
         stage('Checkout Repository') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/dodier111/python-githubaction.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/Taissery-Suhaib/python.git']]])
             }
         }
 
         stage('Deploy and Run Python Application') {
             steps {
                 sh 'pip3 install -r requirements.txt'
-                sh 'pm2 start app.py --interpreter python3y'
+                sh 'sudo -u ubuntu /usr/local/bin/pm2 start app.py --interpreter python3'
             }
         }
     }
 }
+
 
